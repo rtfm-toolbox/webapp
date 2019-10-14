@@ -1,0 +1,82 @@
+<header class="header header-6">
+  <div class="branding">
+    <a href="/" class="nav-link">
+      <span class="title">toolbox</span>
+    </a>
+  </div>
+  <div class="header-nav">
+    <a *ngFor="let item of menu" (click)="menuClick(item)" class="nav-link nav-text">{{ item.text }}</a>
+    <!-- <a href="javascript://" class="nav-link nav-text">Dashboard</a>
+      <a href="javascript://" class="nav-link nav-text">Geräte</a>
+      <a href="javascript://" class="active nav-link nav-text">Workshops</a>
+      <a href="javascript://" class="nav-link nav-text">Projekte</a>
+      <a href="javascript://" class="nav-link nav-text">Blog</a> -->
+  </div>
+  <div class="header-actions">
+
+
+    <!-- <clr-dropdown class="dropdown bottom-left">
+      <button class="dropdown-toggle btn" style="border: 0;">
+        <clr-icon shape="cog"></clr-icon>
+        <clr-icon shape="caret down"></clr-icon>
+      </button>
+      <div class="dropdown-menu">
+        <h4 class="dropdown-header">Dropdown header</h4>
+        <div class="dropdown-item active">First Action</div>
+        <div class="dropdown-item disabled">Disabled Action</div>
+        <div class="dropdown-divider"></div>
+        <div class="dropdown-item">Link 1</div>
+        <div class="dropdown-item">Link 2</div>
+      </div>
+    </clr-dropdown> -->
+
+
+
+    <clr-dropdown>
+      <button class="btn btn-link" clrDropdownTrigger>
+        <clr-icon shape="applications" class="has-badge is-solid"></clr-icon>
+        <clr-icon shape="caret down"></clr-icon>
+      </button>
+      <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
+        <label class="dropdown-header" aria-hidden="true">Dropdown header</label>
+        <div aria-label="Dropdown header Action 1" clrDropdownItem>Action 1</div>
+        <div aria-label="Dropdown header Disabled Action" [clrDisabled]="true" clrDropdownItem>Disabled Action</div>
+        <div class="dropdown-divider" role="separator" aria-hidden="true"></div>
+        <clr-dropdown>
+          <button clrDropdownTrigger>Link 1</button>
+          <clr-dropdown-menu>
+            <button clrDropdownItem>Foo</button>
+            <clr-dropdown>
+              <button clrDropdownTrigger>Bar</button>
+              <clr-dropdown-menu clrPosition="left-top">
+                <button clrDropdownItem>Baz</button>
+              </clr-dropdown-menu>
+            </clr-dropdown>
+          </clr-dropdown-menu>
+        </clr-dropdown>
+        <div clrDropdownItem>Link 2</div>
+      </clr-dropdown-menu>
+    </clr-dropdown>
+
+  </div>
+</header>
+<nav class="subnav">
+  <ul class="nav" *ngIf="selectedMenu">
+    <li class="nav-item" *ngFor="let sub of selectedMenu.children">
+      <a class="nav-link" (click)="menuClick(sub)">{{ sub.text }}</a>
+    </li>
+
+    <!-- <li class="nav-item">
+              <a class="nav-link active" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Management</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Cloud</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Tenants</a>
+          </li> -->
+  </ul>
+</nav>
