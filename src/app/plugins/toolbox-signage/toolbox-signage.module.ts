@@ -17,24 +17,5 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class ToolboxSignageModule {
   constructor(private menuService: MenuService) {
-
-    this.menuService.register({
-      text: "Displays",
-      order: 1,
-      path: "signage/dashboard",
-      children: [
-        {
-          text: "Übersicht",
-          order: 1,
-          path: "signage/dashboard",
-          children: []
-        },{
-          text: "Monitor anlegen",
-          order: 1,
-          path: "signage/edit",
-          children: []
-        },
-      ]
-    });
   }
 }

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DevicesComponent } from './components/devices/devices.component';
 import { DevicesModuleRouting } from './devices.routing';
 import { MenuService } from 'src/app/services/menu.service';
+import { ClarityModule } from '@clr/angular';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { MenuService } from 'src/app/services/menu.service';
   ],
   imports: [
     CommonModule,
-    DevicesModuleRouting
+    DevicesModuleRouting,
+    ClarityModule
   ]
 })
 export class DevicesModule {

@@ -19,6 +19,8 @@ import { ToolboxSignageModule } from './plugins/toolbox-signage/toolbox-signage.
 import { environment } from 'src/environments/environment';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DevicesModule } from './modules/devices/devices.module';
+import { CommonComponentsModule } from './modules/common-components/common-components.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,10 +38,13 @@ import { DevicesModule } from './modules/devices/devices.module';
     ClarityModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+
+    CommonComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

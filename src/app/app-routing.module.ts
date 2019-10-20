@@ -12,33 +12,29 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   {
     path: '',
-    redirectTo: '/index/dashboard',
+    redirectTo: '/dashboard',
     pathMatch: 'full',
   },
 
   {
-    path: 'index',
-    component: LayoutComponent,
-    children: [
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      
-      {
-        path: 'devices',
-        loadChildren: () => import('./modules/devices/devices.module').then(m => m.DevicesModule)
-      }
-    ]
+    path: 'dashboard',
+    component: DashboardComponent
   },
   
   {
-    path: 'signage',
-    loadChildren: () => import('./plugins/toolbox-signage/toolbox-signage.module').then(m => m.ToolboxSignageModule)
+    path: 'devices',
+    loadChildren: () => import('./modules/devices/devices.module').then(m => m.DevicesModule)
+  },
+  
+  {
+    path: 'spacecontrol',
+    loadChildren: () => import('./modules/space-control/space-control.module').then(m => m.SpaceControlModule)
   },
 
-
-
+  {
+    path: 'signage',
+    loadChildren: () => import('./plugins/toolbox-signage/toolbox-signage.module').then(m => m.ToolboxSignageModule)
+  }
 ];
 
 @NgModule({
