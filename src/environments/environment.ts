@@ -18,135 +18,123 @@ export const environment = {
     default: [
       {
         text: "Dashboard",
-        order: 0,
-        path: "/index/dashboard",
-        children: []
+        path: "/dashboard",
+
+        children: [
+          {
+            text: "Overview",
+            path: "/dashboard",
+          }
+        ]
       },
       {
         text: "Devices and Material",
-        order: 1,
-        path: "/index/devices",
+        path: "/devices",
+
         children: [
           {
             text: "Devices",
-            order: 1,
-            path: "/index/devices",
-            children: []
+            path: "/devices",
           },
           {
             text: "Device Licenses",
-            order: 1,
-            path: "/index/devices",
-            children: []
+            path: "/devices",
           },
           {
             text: "New Device",
-            order: 1,
-            path: "/index/devices/new",
-            children: []
+            path: "/devices/new",
           },
           {
             text: "Material",
-            order: 1,
-            path: "/index/devices/new",
-            children: []
+            path: "/devices/new",
           },
         ]
       },
       {
         text: "CMS",
-        order: 1,
         path: "/index/cms",
         children: [
           {
             text: "Pages",
-            order: 1,
             path: "/index/cms/pages",
-            children: []
           },
           {
             text: "Blog",
-            order: 1,
             path: "/index/cms/pages",
-            children: []
           },
           {
             text: "Announcements",
-            order: 1,
             path: "/index/cms/pages",
-            children: []
           },
           {
             text: "Themes",
-            order: 1,
             path: "/index/cms/themes",
-            children: []
           },
         ]
       },
       {
         text: "Workshops",
-        order: 1,
         path: "/index/workshops",
         children: [
           {
             text: "Kalendar",
-            order: 1,
             path: "/index/cms/pages",
-            children: []
           },
           {
             text: "Registrations",
-            order: 1,
             path: "/index/cms/themes",
-            children: []
           },
         ]
       },
       {
+        
         text: "Space Control",
-        order: 1,
-        path: "/index/workshops",
+        path: "/spacecontrol",
         children: [
           {
             text: "Light",
-            order: 1,
             path: "/index/cms/pages",
-            children: []
           },
           {
             text: "Music",
-            order: 1,
             path: "/index/cms/themes",
-            children: []
           },
           {
             text: "Statistics",
-            order: 1,
-            path: "/index/cms/themes",
-            children: []
+            path: "/spacecontrol/statistics",
           },
         ]
       },
       {
         text: "Users",
-        order: 1,
         path: "/index/admin",
         children: [
           {
             text: "Me",
-            order: 1,
             path: "/index/cms/pages",
-            children: []
           },
           {
             text: "All",
+            path: "/index/cms/pages",
+          },
+          {
+            text: "Presence",
+            path: "/index/cms/pages",
+          },
+        ]
+      },
+      {
+        text: "Projects",
+        path: "/projects",
+        children: [
+          {
+            text: "All Projects",
             order: 1,
             path: "/index/cms/pages",
             children: []
           },
           {
-            text: "Presence",
+            text: "my todos",
             order: 1,
             path: "/index/cms/pages",
             children: []
@@ -154,6 +142,27 @@ export const environment = {
         ]
       },
       {
+        id: "shifts",        
+        text: "Shifts",
+        order: 1,
+        path: "",
+        children: [
+          {
+            text: "Timetables",
+            order: 1,
+            path: "/index/cms/pages",
+            children: []
+          },
+          {
+            text: "Events",
+            order: 1,
+            path: "/index/cms/pages",
+            children: []
+          },
+        ]
+      },
+      {
+        id: "admin",
         text: "Administration",
         order: 1,
         path: "/index/admin",
@@ -179,6 +188,15 @@ export const environment = {
         ]
       }
     ]
+  },
+
+  apis: {
+    presence: {
+      url: "https://api.toolbox.hmnd.local/presence"
+    },
+    devices: {
+      url: "http://api.toolbox.hmnd.local/devices"
+    }
   }
 };
 
