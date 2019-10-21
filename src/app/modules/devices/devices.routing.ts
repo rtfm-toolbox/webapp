@@ -1,20 +1,16 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { DevicesComponent } from './components/devices/devices.component';
+import { DeviceComponent } from './components/device/device.component';
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'list',
-        pathMatch: 'full',
+        component: DevicesComponent
     },
     {
-        path: 'list',
-        component: DevicesComponent,
-        data: {
-            id: 'devices-list',
-            toplevel: 'devices'
-        }
+        path: 'details/:id',
+        component: DeviceComponent
     }
 ];
 

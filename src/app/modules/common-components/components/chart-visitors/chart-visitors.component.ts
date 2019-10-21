@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as Chart from 'chart.js';
 import * as moment from 'moment';
-import { start } from 'repl';
 import { data as ChartData } from './data';
 
 @Component({

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { DevicesRepository } from '../../repositories/devices.service';
 
 @Component({
   selector: 'app-devices',
@@ -16,9 +17,8 @@ export class DevicesComponent implements OnInit {
   devices: BehaviorSubject<Device[]> = new BehaviorSubject([]);
 
   constructor(
-    private menuservice: MenuService,
     private router: Router,
-    private http: HttpClient
+    private deviceRepo: DevicesRepository
   ) {
 
   }
@@ -28,10 +28,11 @@ export class DevicesComponent implements OnInit {
   }
 
   loadDevices () {
-    this.http.get<Device[]>(environment.apis.devices.url).subscribe(result => {
-      console.log("result:", result);
-      this.devices.next(result);
-    })
+    this.deviceRepo.GetAll().subscribe(result => this.devices.next(result));
+  }
+
+  rowClick(device: Device) {
+    this.router.navigate(["devices", "details", device.id]);
   }
 
 }
